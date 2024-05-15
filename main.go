@@ -17,11 +17,11 @@ func main() {
 }
 
 func Index(c *gin.Context) {
-	var boardAction models.BoardAction
-	if c.Bind(&boardAction) != nil {
+	var gameState models.GameState
+	if c.Bind(&gameState) != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"message": "StatusInternalServerError"})
 		return
 	}
 
-	c.JSON(http.StatusOK, logic.Decide(boardAction))
+	c.JSON(http.StatusOK, logic.Decide(gameState))
 }

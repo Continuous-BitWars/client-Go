@@ -8,8 +8,8 @@ import (
 )
 
 func StrategyTest(t *testing.T) {
-	boardAction := models.BoardAction{}
-	result := Decide(boardAction)
+	gameState := models.GameState{}
+	result := Decide(gameState)
 	want := []models.PlayerAction{}
 
 	if reflect.DeepEqual(result, want) {
