@@ -1,6 +1,7 @@
 package models
 
 type GameConfig struct {
-    BaseLevels []BaseLevel `json:"baseLevel"` // all available base levels
-    Paths PathConfig `json:"pathConfig"`      // settings containing paths between bases
+	BaseLevels []BaseLevel `json:"baselevels"` // all available base levels
+	Paths      PathConfig  `json:"paths"`      // settings containing paths between bases
 }
+

@@ -11,9 +11,14 @@ import (
 func main() {
 	r := gin.Default()
 	r.SetTrustedProxies(nil)
+	r.GET("/", Identify)
 	r.POST("/", Index)
 	r.Run(":3000")
 
+}
+
+func Identify(c *gin.Context) {
+	c.String(http.StatusOK, "Bitwars Player Go")
 }
 
 func Index(c *gin.Context) {
